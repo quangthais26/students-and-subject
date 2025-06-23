@@ -1,0 +1,40 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h3 class="card-title">Students</h3>
+    <br/>
+    <a href="/students/create" class="btn btn-outline-primary">
+      Create a new student
+    </a>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th style="width: 20px">#ID</th>
+        <th>Name</th>
+        <th style="width: 80px">Age</th>
+        <th>Telephone</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="s : ${students}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.ten}"></td>
+        <td th:text="${s.tuoi}"></td>
+        <td th:text="${s.sodienthoai}"></td>
+        <td>
+          <a th:href="@{/students/edit/{id}(id=${s.id})}" class="btn btn-warning btn-sm">Edit</a>
+        </td>
+        <td>
+          <a onclick="return confirm('Chac chan xoa khong?')" th:href="@{/students/delete/{id}(id=${s.id})}" class="btn btn-warning btn-sm">Delete</a>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>

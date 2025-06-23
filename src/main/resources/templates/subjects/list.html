@@ -1,0 +1,35 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <h3 class="card-title">Subjects</h3>
+        <br/>
+        <a href="/subjects/create" class="btn btn-outline-primary">
+            Create a new subject
+        </a>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 20px">#ID</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="s : ${subjects}">
+                <td th:text="${s.id}"></td>
+                <td th:text="${s.name}"></td>
+                <td>
+                    <a th:href="@{/subjects/edit/{id}(id=${s.id})}" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+                <td>
+                    <a onclick="return confirm('Chắc chắn xóa không?')" th:href="@{/subjects/delete/{id}(id=${s.id})}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

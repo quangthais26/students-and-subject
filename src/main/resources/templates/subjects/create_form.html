@@ -1,0 +1,60 @@
+<div class="card card-info card-outline mb-4">
+    <!--begin::Header-->
+    <div class="card-header"><div class="card-title">Create a new subject</div></div>
+    <!--end::Header-->
+    <!--begin::Form-->
+    <form action="/subjects/create" method="post" class="needs-validation" novalidate>
+        <!--begin::Body-->
+        <div class="card-body">
+            <!--begin::Row-->
+            <div class="row g-3">
+                <!--begin::Col-->
+                <div class="col-md-6">
+                    <label for="validationCustom01" class="form-label">Name</label>
+                    <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            id="validationCustom01"
+                            required
+                    />
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <!--end::Col-->
+            </div>
+            <!--end::Row-->
+        </div>
+        <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+            <button class="btn btn-info" type="submit">Create</button>
+        </div>
+        <!--end::Footer-->
+    </form>
+    <!--end::Form-->
+
+    <!--begin::JavaScript-->
+    <script>
+        (() => {
+          'use strict';
+
+          const forms = document.querySelectorAll('.needs-validation');
+
+          Array.from(forms).forEach((form) => {
+            form.addEventListener(
+              'submit',
+              (event) => {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+              },
+              false,
+            );
+          });
+        })();
+    </script>
+    <!--end::JavaScript-->
+</div>
