@@ -14,6 +14,12 @@ public class HomeController {
         model.addAttribute("title","Trang chu");
         return "layout/main";
     }
+    @GetMapping("khach")
+    public String home2(Model model){
+        model.addAttribute("content","home");
+        model.addAttribute("title","Trang chu 2");
+        return "layout/main2";
+    }
     @GetMapping("about")
     public String about(Model model){
         model.addAttribute("content","about");

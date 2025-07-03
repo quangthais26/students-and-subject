@@ -47,4 +47,9 @@ public class Student {
     public void setTen(String ten) {
         this.ten = ten;
     }
+    @Override
+    public String toString() {
+        return "Student{id=" + id + ", ten='" + ten + "'}";
+    }
+
 }
